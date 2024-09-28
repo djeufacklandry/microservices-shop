@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: product-service
+          image: djeufacklandry/product-service:latest
+          ports:
+            - containerPort: 81
+        - name: mongodb
+          image: mongo:latest
+          ports:
+            - containerPort: 27017
+          env:
+            - name: MONGO_INITDB_ROOT_USERNAME
+              value: "mongoUser"
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              value: "giresse2001"
+
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "500m"
+            limits:
+              memory: "2Gi"
+              cpu: "1"
+              
+          volumeMounts:
+            - mountPath: /data/db
+              name: mongo-persistent-storage
+
+      imagePullSecrets:
+        - name: myregistrykey

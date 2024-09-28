@@ -73,9 +73,3 @@ data:
           - targets: ['inventory-service.default.svc.cluster.local:8082'] ## only for demo purposes don't use host.docker.internal in production
             labels:
               application: 'Inventory Service'
-      - job_name: 'notification-service'
-        metrics_path: '/actuator/prometheus'
-        static_configs:
-          - targets: ['notification-service.default.svc.cluster.local:8083'] ## only for demo purposes don't use host.docker.internal in production
-            labels:
-              application: 'Notification Service'
