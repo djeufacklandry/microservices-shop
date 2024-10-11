@@ -1,0 +1,7 @@
+spring.data.mongodb.uri=mongodb://localhost:27017/product-service
+server.port=8080
+# Loki URL
+loki.url=http://localhost:3100/loki/api/v1/push
+
+# Actuator Prometheus Endpoint
+management.endpoints.web.exposure.include= prometheus

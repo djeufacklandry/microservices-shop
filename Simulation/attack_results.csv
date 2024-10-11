@@ -1,0 +1,11 @@
+Angriff,Erfolg
+DoS Attack,Ja
+Privilege Escalation,Ja
+Pod Resource Exhaustion,Ja
+Container Escape,Ja
+Unauthorized API Access,Ja
+Network Sniffing,Ja
+Malicious Image Injection,Ja
+Service Misconfiguration,Ja
+Cluster Overload,Ja
+Data Exfiltration,Ja
